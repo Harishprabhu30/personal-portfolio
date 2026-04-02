@@ -1,24 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import StartupIntro from "./StartupIntro";
 
 export default function Hero() {
   return (
-    <section className="py-32 max-w-4xl">
+    <section className="py-28 md:py-36 max-w-5xl">
+      <StartupIntro />
+
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-5xl md:text-7xl font-semibold tracking-tight"
+        initial={{ opacity: 0, y: 16, letterSpacing: "0.2em", filter: "blur(10px)" }}
+        animate={{ opacity: 1, y: 0, letterSpacing: "-0.03em", filter: "blur(0px)" }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+        className="text-5xl md:text-7xl font-semibold tracking-tight text-white"
       >
         Harish Prabhu
       </motion.h1>
 
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="mt-6 text-2xl text-neutral-300"
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="mt-6 text-xl md:text-2xl text-neutral-300"
       >
         AI & Robotics Systems Engineer
       </motion.p>
@@ -26,8 +29,8 @@ export default function Hero() {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="mt-3 text-neutral-500 max-w-xl"
+        transition={{ delay: 1.5, duration: 0.6 }}
+        className="mt-3 max-w-2xl text-neutral-500"
       >
         From simulation to real-world robotics decisions
       </motion.p>

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Theme */
+body {
+  background-color: #000000;
+  color: #e5e5e5;
+}
+
+/* Smooth feel */
+* {
+  transition: all 0.2s ease-in-out;
+}

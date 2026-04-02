@@ -4,13 +4,20 @@ import { useState } from "react";
 import AIAnswerPanel from "./AIAnswerPanel";
 import { insertFeedback } from "@/lib/supabase/queries";
 
+const SUGGESTED_PROMPTS = [
+  "What has Harish built?",
+  "Tell me about SLAM",
+  "What roles suit him?",
+  "feedback: impressive portfolio",
+];
+
 export default function AIQueryBar() {
   const [input, setInput] = useState("");
   const [answer, setAnswer] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async () => {
-    const raw = input.trim();
+  const handleSubmit = async (customInput?: string) => {
+    const raw = (customInput ?? input).trim();
     const text = raw.toLowerCase();
 
     if (!raw) return;
@@ -33,11 +40,15 @@ export default function AIQueryBar() {
         }
       } else if (text.includes("what") || text.includes("who")) {
         setAnswer(
-          "Harish is an AI & Robotics Systems Engineer focusing on practical system development, SLAM evaluation, and robotics applications."
+          "Harish is an AI & Robotics Systems Engineer focused on practical system development, robotics evaluation, and applied autonomy workflows."
         );
       } else if (text.includes("slam")) {
         setAnswer(
-          "His SLAM thesis focuses on evaluating localization approaches with strong attention to industrial relevance, system design, and real-world applicability."
+          "His flagship thesis investigates SLAM-related localization approaches with emphasis on industrial relevance, reproducible evaluation, and real-world engineering thinking."
+        );
+      } else if (text.includes("roles")) {
+        setAnswer(
+          "He fits early-career roles across robotics, validation and testing, systems integration, embedded/IoT-adjacent engineering, and autonomy-focused technical work."
         );
       } else if (text.includes("skills") || text.includes("tools")) {
         setAnswer(
@@ -45,7 +56,7 @@ export default function AIQueryBar() {
         );
       } else {
         setAnswer(
-          "Query not recognized yet. Try asking about projects, skills, or SLAM. To send feedback, start with 'feedback:'."
+          "Query not recognized yet. Try asking about projects, skills, roles, or SLAM. To send feedback, start with 'feedback:'."
         );
       }
     } finally {
@@ -66,20 +77,32 @@ export default function AIQueryBar() {
             onKeyDown={(e) => {
               if (e.key === "Enter") handleSubmit();
             }}
-            className="w-full p-5 rounded-2xl bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none"
+            className="w-full p-5 rounded-2xl bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-500"
           />
 
           <button
-            onClick={handleSubmit}
+            onClick={() => handleSubmit()}
             disabled={loading}
-            className="px-4 rounded-xl bg-white text-black font-medium disabled:opacity-60"
+            className="px-5 rounded-2xl bg-white text-black font-medium disabled:opacity-60"
           >
             {loading ? "..." : "Go"}
           </button>
         </div>
 
-        <p className="text-sm text-neutral-500 mt-2">
-          Try: “What has Harish built?” · “Tell me about SLAM” · “feedback: strong thesis work”
+        <div className="mt-4 flex flex-wrap gap-2">
+          {SUGGESTED_PROMPTS.map((prompt) => (
+            <button
+              key={prompt}
+              onClick={() => handleSubmit(prompt)}
+              className="rounded-full border border-neutral-800 bg-neutral-950 px-3 py-1.5 text-sm text-neutral-400 hover:border-neutral-600 hover:text-white"
+            >
+              {prompt}
+            </button>
+          ))}
+        </div>
+
+        <p className="mt-3 text-sm text-neutral-500">
+          Ask about projects, skills, roles, or leave feedback.
         </p>
 
         <AIAnswerPanel answer={answer} />

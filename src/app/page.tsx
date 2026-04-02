@@ -2,6 +2,9 @@ import Hero from "@/components/home/Hero";
 import AIQueryBar from "@/components/home/AIQueryBar";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
 import TechStackStrip from "@/components/home/TechStackStrip";
+import RoleClusters from "@/components/home/RoleClusters";
+import AboutSnapshot from "@/components/home/AboutSnapshot";
+import ResumeCTA from "@/components/home/ResumeCTA";
 
 export default function Home() {
   return (
@@ -12,8 +15,11 @@ export default function Home() {
       </div>
 
       <AIQueryBar />
+      <RoleClusters />
       <FeaturedProjects />
+      <AboutSnapshot />
       <TechStackStrip />
+      <ResumeCTA />
     </div>
   );
 }

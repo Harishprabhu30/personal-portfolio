@@ -1,15 +1,26 @@
-export default function TechStackStrip() {
-  const tech = ["Python", "C++", "ROS2", "Linux", "Isaac Sim", "Computer Vision"];
+const tech = [
+  "Python",
+  "C++",
+  "ROS 2",
+  "Linux",
+  "Isaac Sim",
+  "Computer Vision",
+];
 
+export default function TechStackStrip() {
   return (
-    <section className="py-12">
-      <div className="flex flex-wrap gap-4 text-sm text-neutral-400">
-        {tech.map((t) => (
+    <section className="py-20">
+      <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
+        Core Stack
+      </p>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        {tech.map((item) => (
           <span
-            key={t}
-            className="px-3 py-1 border border-neutral-700 rounded-full"
+            key={item}
+            className="rounded-full border border-neutral-800 bg-neutral-950 px-4 py-2 text-sm text-neutral-300"
           >
-            {t}
+            {item}
           </span>
         ))}
       </div>

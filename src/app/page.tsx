@@ -5,6 +5,7 @@ import TechStackStrip from "@/components/home/TechStackStrip";
 import RoleClusters from "@/components/home/RoleClusters";
 import AboutSnapshot from "@/components/home/AboutSnapshot";
 import ResumeCTA from "@/components/home/ResumeCTA";
+import BlogPreview from "@/components/home/BlogPreview";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <FeaturedProjects />
       <AboutSnapshot />
       <TechStackStrip />
+      <BlogPreview />
       <ResumeCTA />
     </div>
   );

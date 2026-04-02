@@ -4,9 +4,9 @@ import { getAllProjects } from "@/lib/projects/getAllProjects";
 import { getProjectBySlug } from "@/lib/projects/getProjectBySlug";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export function generateStaticParams() {
@@ -15,11 +15,13 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProjectDetailPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectDetailPage({ params }: Props) {
+  const { slug } = await params; // ✅ IMPORTANT (same as blog)
+
+  const project = getProjectBySlug(slug);
 
   if (!project) {
-    notFound();
+    notFound(); // triggers 404 if slug mismatch
   }
 
   return (
@@ -91,7 +93,7 @@ export default function ProjectDetailPage({ params }: Props) {
         <div className="mt-14 rounded-3xl border border-neutral-800 bg-neutral-950/60 p-7">
           <h2 className="text-2xl font-semibold text-white">Links</h2>
           <div className="mt-5 flex flex-wrap gap-3">
-            {project.links.github ? (
+            {project.links.github && (
               <a
                 href={project.links.github}
                 target="_blank"
@@ -100,29 +102,31 @@ export default function ProjectDetailPage({ params }: Props) {
               >
                 GitHub
               </a>
-            ) : null}
+            )}
 
-            {project.links.blog ? (
+            {project.links.blog && (
               <a
                 href={project.links.blog}
                 className="rounded-2xl border border-neutral-700 px-4 py-2 text-white hover:border-neutral-500"
               >
                 Related Blog
               </a>
-            ) : null}
+            )}
 
-            {project.links.publication ? (
+            {project.links.publication && (
               <a
                 href={project.links.publication}
                 className="rounded-2xl border border-neutral-700 px-4 py-2 text-white hover:border-neutral-500"
               >
                 Publication
               </a>
-            ) : null}
+            )}
 
-            {!project.links.github && !project.links.blog && !project.links.publication ? (
-              <p className="text-neutral-500">Links will be added soon.</p>
-            ) : null}
+            {!project.links.github &&
+              !project.links.blog &&
+              !project.links.publication && (
+                <p className="text-neutral-500">Links will be added soon.</p>
+              )}
           </div>
         </div>
       </div>

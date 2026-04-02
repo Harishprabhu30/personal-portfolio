@@ -1,0 +1,29 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function StartupIntro() {
+  return (
+    <div className="mb-6 space-y-2">
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, 1, 0.4, 1] }}
+        transition={{ duration: 0.8 }}
+        className="text-xs uppercase tracking-[0.3em] text-neutral-500"
+      >
+        booting interface...
+      </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="text-sm text-neutral-400"
+      >
+        <span className="inline-block border border-neutral-800 bg-neutral-950 px-3 py-1 rounded-full">
+          Hi
+        </span>
+      </motion.div>
+    </div>
+  );
+}

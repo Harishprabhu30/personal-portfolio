@@ -1,0 +1,33 @@
+---
+title: "Why low light disrupted my visual SLAM experiments"
+slug: "low-light-visual-slam-debugging"
+date: "2026-04-03"
+excerpt: "A practical breakdown of how low-light conditions affected trajectory quality and how the issue was isolated and improved."
+tags: ["SLAM", "Computer Vision", "Debugging"]
+category: "Thesis Notes"
+series: "Visual SLAM Lessons"
+published: true
+coverImage: ""
+---
+
+## Context
+
+During my SLAM experiments, I observed that one of the major factors affecting trajectory quality was not only the algorithm pipeline itself, but also the visual quality of the incoming data.
+
+## What went wrong
+
+Trajectory behavior became inconsistent under poorer lighting conditions. This made the system harder to evaluate fairly because instability was appearing before deeper comparison even started.
+
+## How I narrowed it down
+
+I reduced the problem gradually by checking whether the issue came from:
+- transforms
+- synchronization
+- topic structure
+- image quality
+
+The strongest clue came from how behavior changed under different visual conditions.
+
+## Takeaway
+
+This reminded me that robotics debugging is rarely about only one algorithm. Often, reliability depends on the entire sensing and system chain.

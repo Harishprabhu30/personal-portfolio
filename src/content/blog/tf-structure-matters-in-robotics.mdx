@@ -1,0 +1,31 @@
+---
+title: "Why TF structure matters more than people think"
+slug: "tf-structure-matters-in-robotics"
+date: "2026-04-03"
+excerpt: "A short reflection on why transform structure is not just setup work, but a core part of reliable robotics experimentation."
+tags: ["ROS2", "TF", "Robotics"]
+category: "Engineering Notes"
+series: "System Design Lessons"
+published: true
+coverImage: ""
+---
+
+## Introduction
+
+In robotics workflows, transform structure is easy to treat as a setup detail. In practice, it strongly affects observability, consistency, debugging clarity, and evaluation quality.
+
+## Why it matters
+
+If frame relationships are unclear or inconsistently published, then downstream outputs become harder to trust. This does not only affect visualization. It affects the confidence with which system behavior can be interpreted.
+
+## Practical lesson
+
+A clean transform policy improves:
+- debugging speed
+- reproducibility
+- system readability
+- integration discipline
+
+## Final thought
+
+Good robotics work is often supported by invisible structure. TF is one of those invisible layers.

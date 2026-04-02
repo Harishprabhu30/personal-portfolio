@@ -16,7 +16,7 @@ export default function ContactPage() {
 
         <div className="mt-10 grid gap-6">
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:harishprabhu3007@gmail.com"
             className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6 hover:border-neutral-600"
           >
             <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">Email</p>
@@ -24,7 +24,7 @@ export default function ContactPage() {
           </a>
 
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/harishprabhu3007/"
             target="_blank"
             rel="noreferrer"
             className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6 hover:border-neutral-600"
@@ -34,7 +34,7 @@ export default function ContactPage() {
           </a>
 
           <a
-            href="https://github.com"
+            href="https://github.com/Harishprabhu30"
             target="_blank"
             rel="noreferrer"
             className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6 hover:border-neutral-600"

@@ -19,32 +19,32 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="py-24">
-      <div className="mb-10">
+    <section className="py-20 sm:py-24">
+      <div className="mb-8 sm:mb-10">
         <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
           Selected Work
         </p>
-        <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-white">
+        <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
           Featured Projects
         </h2>
-        <p className="mt-3 max-w-2xl text-neutral-500">
+        <p className="mt-3 max-w-2xl text-neutral-500 leading-7">
           A focused selection of work that reflects practical robotics engineering,
           system evaluation, and real-world technical thinking.
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
         {projects.map((project) => (
           <Link
             key={project.title}
             href={project.href}
-            className="group rounded-3xl border border-neutral-800 bg-neutral-950/70 p-7 transition hover:border-neutral-600 hover:bg-neutral-950"
+            className="group rounded-3xl border border-neutral-800 bg-neutral-950/70 p-6 sm:p-7 transition hover:border-neutral-600 hover:bg-neutral-950"
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-500">
               {project.tag}
             </p>
 
-            <h3 className="mt-4 text-2xl font-semibold text-white transition group-hover:text-neutral-100">
+            <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-white transition group-hover:text-neutral-100">
               {project.title}
             </h3>
 

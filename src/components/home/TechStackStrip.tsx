@@ -9,7 +9,7 @@ const tech = [
 
 export default function TechStackStrip() {
   return (
-    <section className="py-20">
+    <section className="py-16 sm:py-20">
       <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
         Core Stack
       </p>
@@ -18,7 +18,7 @@ export default function TechStackStrip() {
         {tech.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-neutral-800 bg-neutral-950 px-4 py-2 text-sm text-neutral-300"
+            className="rounded-full border border-neutral-800 bg-neutral-950 px-4 py-2 text-xs sm:text-sm text-neutral-300"
           >
             {item}
           </span>

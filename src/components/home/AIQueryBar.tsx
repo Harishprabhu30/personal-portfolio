@@ -66,9 +66,9 @@ export default function AIQueryBar() {
   };
 
   return (
-    <section className="my-16">
+    <section className="my-14 sm:my-16">
       <div className="max-w-2xl mx-auto">
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-3">
           <input
             type="text"
             placeholder="Ask about my work or type feedback: ..."
@@ -77,13 +77,13 @@ export default function AIQueryBar() {
             onKeyDown={(e) => {
               if (e.key === "Enter") handleSubmit();
             }}
-            className="w-full p-5 rounded-2xl bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-500"
+            className="w-full p-4 sm:p-5 rounded-2xl bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-500"
           />
 
           <button
             onClick={() => handleSubmit()}
             disabled={loading}
-            className="px-5 rounded-2xl bg-white text-black font-medium disabled:opacity-60"
+            className="w-full sm:w-auto px-5 py-4 sm:py-0 rounded-2xl bg-white text-black font-medium disabled:opacity-60"
           >
             {loading ? "..." : "Go"}
           </button>
@@ -94,7 +94,7 @@ export default function AIQueryBar() {
             <button
               key={prompt}
               onClick={() => handleSubmit(prompt)}
-              className="rounded-full border border-neutral-800 bg-neutral-950 px-3 py-1.5 text-sm text-neutral-400 hover:border-neutral-600 hover:text-white"
+              className="rounded-full border border-neutral-800 bg-neutral-950 px-3 py-1.5 text-xs sm:text-sm text-neutral-400 hover:border-neutral-600 hover:text-white"
             >
               {prompt}
             </button>

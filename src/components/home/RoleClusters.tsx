@@ -18,23 +18,23 @@ const roles = [
 
 export default function RoleClusters() {
   return (
-    <section className="py-24">
-      <div className="mb-10">
+    <section className="py-20 sm:py-24">
+      <div className="mb-8 sm:mb-10">
         <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
           Recruiter Snapshot
         </p>
-        <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-white">
+        <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
           Where I Fit Best
         </h2>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
         {roles.map((role) => (
           <div
             key={role.title}
-            className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6"
+            className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6"
           >
-            <h3 className="text-lg font-semibold text-white">{role.title}</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white">{role.title}</h3>
             <p className="mt-3 leading-7 text-neutral-400">{role.description}</p>
           </div>
         ))}

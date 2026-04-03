@@ -1,11 +1,12 @@
 export default function AboutPage() {
   return (
-    <div className="px-6 md:px-12 lg:px-24 py-20">
+    <div className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 sm:py-20">
       <div className="max-w-4xl">
         <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
           About
         </p>
-        <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-white">
+
+        <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
           Practical systems thinking for robotics-focused engineering
         </h1>
 
@@ -28,22 +29,22 @@ export default function AboutPage() {
           careful technical reasoning, and real engineering collaboration.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6">
+        <div className="mt-10 grid gap-5 sm:gap-6 md:grid-cols-3">
+          <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6">
             <h2 className="text-lg font-semibold text-white">Build</h2>
             <p className="mt-3 leading-7 text-neutral-400">
               I enjoy creating structured systems rather than isolated demos.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6">
+          <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6">
             <h2 className="text-lg font-semibold text-white">Debug</h2>
             <p className="mt-3 leading-7 text-neutral-400">
               I care about understanding what breaks, why it breaks, and how to verify improvements.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6">
+          <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6">
             <h2 className="text-lg font-semibold text-white">Apply</h2>
             <p className="mt-3 leading-7 text-neutral-400">
               I aim to connect technical work with realistic engineering value.

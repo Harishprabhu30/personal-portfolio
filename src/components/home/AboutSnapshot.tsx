@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function AboutSnapshot() {
   return (
-    <section className="py-24">
-      <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-start">
+    <section className="py-20 sm:py-24">
+      <div className="grid gap-8 sm:gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-start">
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
             About
           </p>
-          <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-white">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
             Practical engineering, structured thinking, and robotics-focused growth
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-neutral-400">
@@ -25,7 +25,7 @@ export default function AboutSnapshot() {
           </p>
         </div>
 
-        <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-6">
+        <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6">
           <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">
             Strengths
           </p>

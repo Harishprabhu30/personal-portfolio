@@ -30,7 +30,7 @@ export default function ContactPage() {
           >
             <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">Email</p>
             <p className="mt-2 text-base sm:text-lg text-white break-all">
-              your-email@example.com
+              harishprabhu3007@gmail.com
             </p>
           </a>
 

@@ -24,6 +24,7 @@ export default function ResumeCTA() {
           <Button
             variant="secondary"
             href="/resume/Harish_Prabhu_Resume.pdf"
+            download
           >
             Download PDF
         </Button>

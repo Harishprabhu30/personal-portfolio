@@ -74,11 +74,11 @@ export default function ResumePage() {
           </ul>
         </div>
 
-        <div className="mt-10 rounded-3xl border border-dashed border-neutral-800 p-6 sm:p-7">
+        {/* <div className="mt-10 rounded-3xl border border-dashed border-neutral-800 p-6 sm:p-7">
           <p className="text-neutral-500">
             Resume PDF path: <span className="text-neutral-300">public/resume/Harish_Prabhu_Resume.pdf</span>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Resume",
+  description:
+    "Resume of Harish Prabhu — skills, project focus, and early-career role fit across robotics, systems, validation, and applied engineering.",
+};
+
 export default function ResumePage() {
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 sm:py-20">

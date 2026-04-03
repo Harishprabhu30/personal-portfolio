@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Harish Prabhu for robotics, systems, validation, simulation, and related early-career opportunities across Europe.",
+};
+
 export default function ContactPage() {
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 sm:py-20">

@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { getAllProjects } from "@/lib/projects/getAllProjects";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Selected robotics, SLAM-related, and applied engineering projects by Harish Prabhu.",
+};
 
 export default function ProjectsPage() {
   const projects = getAllProjects();

@@ -2,6 +2,33 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts } from "@/lib/blog/getAllPosts";
 import { getPostBySlug } from "@/lib/blog/getPostBySlug";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Post not found",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
+}
 
 type Props = {
   params: Promise<{

@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { getAllProjects } from "@/lib/projects/getAllProjects";
+import type { Metadata } from "next";
+import Card from "@/components/ui/Card";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Selected robotics, SLAM-related, and applied engineering projects by Harish Prabhu.",
+};
 
 export default function ProjectsPage() {
   const projects = getAllProjects();
@@ -26,36 +34,38 @@ export default function ProjectsPage() {
           <Link
             key={project.slug}
             href={`/projects/${project.slug}`}
-            className="block rounded-3xl border border-neutral-800 bg-neutral-950/70 p-6 sm:p-8 transition hover:border-neutral-600"
+            className="block"
           >
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-neutral-800 px-3 py-1 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-neutral-500">
-                {project.category}
-              </span>
-              <span className="text-xs sm:text-sm text-neutral-500">{project.timeline}</span>
-              <span className="text-xs sm:text-sm text-neutral-500">{project.status}</span>
-            </div>
-
-            <h2 className="mt-5 text-2xl sm:text-3xl font-semibold text-white">
-              {project.title}
-            </h2>
-
-            <p className="mt-4 max-w-3xl leading-8 text-neutral-400">
-              {project.summary}
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-neutral-800 bg-black/20 px-3 py-1 text-xs sm:text-sm text-neutral-300"
-                >
-                  {tech}
+            <Card>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-neutral-800 px-3 py-1 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-neutral-500">
+                  {project.category}
                 </span>
-              ))}
-            </div>
+                <span className="text-xs sm:text-sm text-neutral-500">{project.timeline}</span>
+                <span className="text-xs sm:text-sm text-neutral-500">{project.status}</span>
+              </div>
 
-            <div className="mt-8 text-sm text-neutral-300">Open project →</div>
+              <h2 className="mt-5 text-2xl sm:text-3xl font-semibold text-white">
+                {project.title}
+              </h2>
+
+              <p className="mt-4 max-w-3xl leading-8 text-neutral-400">
+                {project.summary}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-neutral-800 bg-black/20 px-3 py-1 text-xs sm:text-sm text-neutral-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-8 text-sm text-neutral-300">Open project →</div>
+            </Card>
           </Link>
         ))}
       </div>

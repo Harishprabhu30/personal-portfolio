@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn more about Harish Prabhu, his robotics-focused engineering direction, systems thinking, and openness to opportunities across Europe.",
+};
+
 export default function AboutPage() {
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 sm:py-20">

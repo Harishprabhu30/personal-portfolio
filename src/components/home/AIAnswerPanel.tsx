@@ -16,7 +16,7 @@ export default function AIAnswerPanel({ answer }: Props) {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
           transition={{ duration: 0.35 }}
-          className="mt-6 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950"
+          className="mt-6 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 shadow-subtle"
         >
           <div className="flex items-center justify-between border-b border-neutral-800 px-4 py-3">
             <div className="flex items-center gap-2">
@@ -32,7 +32,10 @@ export default function AIAnswerPanel({ answer }: Props) {
             <p className="mb-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-600">
               output
             </p>
-            <p className="text-sm sm:text-base leading-7 text-neutral-300">{answer}</p>
+
+            <p className="text-sm sm:text-base leading-7 text-neutral-300 tracking-[0.01em]">
+              {answer}
+            </p>
           </div>
         </motion.div>
       ) : null}

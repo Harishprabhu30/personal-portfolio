@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function ResumeCTA() {
   return (
@@ -16,20 +17,18 @@ export default function ResumeCTA() {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
-          <Link
-            href="/resume"
-            className="rounded-2xl bg-white px-5 py-3 text-center font-medium text-black"
-          >
-            View Resume
+          <Link href="/resume">
+          <Button variant="primary">View Resume</Button>
           </Link>
 
-          <a
+          <Button
+            variant="secondary"
             href="/resume/Harish_Prabhu_Resume.pdf"
-            className="rounded-2xl border border-neutral-700 px-5 py-3 text-center font-medium text-white hover:border-neutral-500"
+            download
           >
             Download PDF
-          </a>
-        </div>
+        </Button>
+      </div>
       </div>
     </section>
   );

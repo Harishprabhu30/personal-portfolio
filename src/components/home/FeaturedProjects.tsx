@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Card from "@/components/ui/Card";
 
 const projects = [
   {
@@ -35,11 +36,8 @@ export default function FeaturedProjects() {
 
       <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
         {projects.map((project) => (
-          <Link
-            key={project.title}
-            href={project.href}
-            className="group rounded-3xl border border-neutral-800 bg-neutral-950/70 p-6 sm:p-7 transition hover:border-neutral-600 hover:bg-neutral-950"
-          >
+        <Link key={project.title} href={project.href} className="group block">
+          <Card>
             <p className="text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-500">
               {project.tag}
             </p>
@@ -55,7 +53,8 @@ export default function FeaturedProjects() {
             <div className="mt-8 text-sm text-neutral-300">
               View project →
             </div>
-          </Link>
+          </Card>
+        </Link>
         ))}
       </div>
     </section>

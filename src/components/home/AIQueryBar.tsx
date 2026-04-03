@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/ui/Button";
 
 import { useState } from "react";
 import AIAnswerPanel from "./AIAnswerPanel";
@@ -80,13 +81,11 @@ export default function AIQueryBar() {
             className="w-full p-4 sm:p-5 rounded-2xl bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-500"
           />
 
-          <button
-            onClick={() => handleSubmit()}
-            disabled={loading}
-            className="w-full sm:w-auto px-5 py-4 sm:py-0 rounded-2xl bg-white text-black font-medium disabled:opacity-60"
-          >
+        <div className="w-full sm:w-auto">
+          <Button onClick={() => handleSubmit()} variant="primary">
             {loading ? "..." : "Go"}
-          </button>
+          </Button>
+        </div>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">

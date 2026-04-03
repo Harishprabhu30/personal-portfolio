@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Harish Prabhu for robotics, systems, validation, simulation, and related early-career opportunities across Europe.",
+};
+
 export default function ContactPage() {
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 sm:py-20">
@@ -22,7 +30,7 @@ export default function ContactPage() {
           >
             <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">Email</p>
             <p className="mt-2 text-base sm:text-lg text-white break-all">
-              your-email@example.com
+              harishprabhu3007@gmail.com
             </p>
           </a>
 

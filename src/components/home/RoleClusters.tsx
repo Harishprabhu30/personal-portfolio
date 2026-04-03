@@ -1,3 +1,5 @@
+import Card from "@/components/ui/Card";
+
 const roles = [
   {
     title: "Robotics & Autonomous Systems",
@@ -30,13 +32,10 @@ export default function RoleClusters() {
 
       <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
         {roles.map((role) => (
-          <div
-            key={role.title}
-            className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6"
-          >
-            <h3 className="text-base sm:text-lg font-semibold text-white">{role.title}</h3>
-            <p className="mt-3 leading-7 text-neutral-400">{role.description}</p>
-          </div>
+      <Card key={role.title}>
+        <h3 className="text-base sm:text-lg font-semibold text-white">{role.title}</h3>
+        <p className="mt-3 leading-7 text-neutral-400">{role.description}</p>
+      </Card>
         ))}
       </div>
     </section>

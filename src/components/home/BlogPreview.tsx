@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog/getAllPosts";
+import Card from "@/components/ui/Card";
 
 export default function BlogPreview() {
   const posts = getAllPosts().slice(0, 2);
@@ -20,19 +21,17 @@ export default function BlogPreview() {
 
       <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
         {posts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="rounded-3xl border border-neutral-800 bg-neutral-950/70 p-6 sm:p-7 transition hover:border-neutral-600"
-          >
-            <p className="text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-500">
-              {post.category}
-            </p>
-            <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-white">
-              {post.title}
-            </h3>
-            <p className="mt-4 leading-7 text-neutral-400">{post.excerpt}</p>
-            <div className="mt-6 text-sm text-neutral-300">Read post →</div>
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
+            <Card>
+              <p className="text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-500">
+                {post.category}
+              </p>
+              <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-white">
+                {post.title}
+              </h3>
+              <p className="mt-4 leading-7 text-neutral-400">{post.excerpt}</p>
+              <div className="mt-6 text-sm text-neutral-300">Read post →</div>
+            </Card>
           </Link>
         ))}
       </div>

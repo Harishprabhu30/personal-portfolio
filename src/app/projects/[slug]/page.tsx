@@ -2,6 +2,33 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllProjects } from "@/lib/projects/getAllProjects";
 import { getProjectBySlug } from "@/lib/projects/getProjectBySlug";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Project not found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.summary,
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.summary,
+    },
+  };
+}
 
 type Props = {
   params: Promise<{

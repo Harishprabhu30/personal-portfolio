@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Card from "@/components/ui/Card";
 
 export default function AboutSnapshot() {
   return (
@@ -24,8 +25,7 @@ export default function AboutSnapshot() {
             thinking, implementation discipline, and curiosity-driven engineering.
           </p>
         </div>
-
-        <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6">
+        <Card>
           <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">
             Strengths
           </p>
@@ -42,7 +42,7 @@ export default function AboutSnapshot() {
           >
             Read more
           </Link>
-        </div>
+        </Card>
       </div>
     </section>
   );

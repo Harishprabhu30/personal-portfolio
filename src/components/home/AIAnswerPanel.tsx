@@ -1,16 +1,29 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 type Props = {
   answer: string | null;
 };
 
 export default function AIAnswerPanel({ answer }: Props) {
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (answer && panelRef.current) {
+      panelRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [answer]);
+
   return (
     <AnimatePresence mode="wait">
       {answer ? (
         <motion.div
+          ref={panelRef}
           key={answer}
           initial={{ opacity: 0, y: 12, filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -32,7 +45,6 @@ export default function AIAnswerPanel({ answer }: Props) {
             <p className="mb-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-600">
               output
             </p>
-
             <p className="text-sm sm:text-base leading-7 text-neutral-300 tracking-[0.01em]">
               {answer}
             </p>

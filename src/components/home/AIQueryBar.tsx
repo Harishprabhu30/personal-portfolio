@@ -12,7 +12,11 @@ const SUGGESTED_PROMPTS = [
   "feedback: impressive portfolio",
 ];
 
-export default function AIQueryBar() {
+type Props = {
+  compact?: boolean;
+};
+
+export default function AIQueryBar({ compact = false }: Props) {
   const [input, setInput] = useState("");
   const [answer, setAnswer] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -67,7 +71,7 @@ export default function AIQueryBar() {
   };
 
   return (
-    <section className="my-14 sm:my-16">
+    <section className={compact ? "m-0" : "mt-4 sm:mt-6 mb-14 sm:mb-16"}>
       <div className="max-w-2xl mx-auto">
         <div className="flex flex-col sm:flex-row gap-3">
           <input
@@ -101,7 +105,7 @@ export default function AIQueryBar() {
         </div>
 
         <p className="mt-3 text-sm text-neutral-500">
-          Ask about projects, skills, roles, or leave feedback.
+          Ask about work, skills, role fit, or leave feedback.
         </p>
 
         <AIAnswerPanel answer={answer} />

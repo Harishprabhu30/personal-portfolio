@@ -1,5 +1,4 @@
 import Hero from "@/components/home/Hero";
-import AIQueryBar from "@/components/home/AIQueryBar";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
 import TechStackStrip from "@/components/home/TechStackStrip";
 import RoleClusters from "@/components/home/RoleClusters";
@@ -15,7 +14,6 @@ export default function Home() {
         <Hero />
       </div>
 
-      <AIQueryBar />
       <RoleClusters />
       <FeaturedProjects />
       <AboutSnapshot />
